@@ -8,9 +8,9 @@ load('hw1_images.mat');
 %imshow(origImg), figure, imshow(noisyImg);
 
 %RBM constants
-h = -1;
-beta = 15;
-v = 20;
+h = 1;
+beta = 2;
+v = 2;
 
 %-2,15,20 -> 0.023943
 
@@ -50,7 +50,7 @@ while diff > 1
                 alternativeEnergyContribution = alternativeEnergyContribution - beta*rightZ*alternativeZ;
             end
             %contribution from top neighbor
-            if(1>1)
+            if(i>1)
                 topZ = oldGridZ(i-1,j);
                 currentEnergyContribution = currentEnergyContribution - beta*topZ*currentZ;
                 alternativeEnergyContribution = alternativeEnergyContribution - beta*topZ*alternativeZ;
@@ -75,7 +75,7 @@ while diff > 1
     disp(diff);
     
     if(lastdiff==diff)
-        break;
+        %break;
     end
     
     lastdiff=diff;
