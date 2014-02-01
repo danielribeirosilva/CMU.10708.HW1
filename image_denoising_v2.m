@@ -9,7 +9,7 @@ load('hw1_images.mat');
 
 %RBM constants
 h = 1;
-beta = 2;
+beta = 4;
 v = 2;
 
 
